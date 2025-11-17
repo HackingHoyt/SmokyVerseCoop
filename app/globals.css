@@ -1,0 +1,427 @@
+/* /* ---------------------------
+   Tailwind Base Setup
+---------------------------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------
+   Global Styles
+   (Affects everything site-wide)
+---------------------------- */
+body {
+  background-color: black;         /* Set full background to black */
+  color: #00ccff;                  /* Default text color is neon blue */
+  font-family: 'sans-serif';       /* Clean, modern font */
+  text-align: center;              /* Center-aligns most text elements */
+  padding: 2rem;                   /* Adds space around the edges */
+}
+
+/* ---------------------------
+   HOMEPAGE: / (Landing Page)
+---------------------------- */
+.homepage-image {
+  width: 100%;                     /* Image stretches to container */
+  max-width: 1000px;               /* But won’t go beyond 1000px wide */
+  margin-top: 2rem;
+  border-radius: 1rem;             /* Smooth, rounded edges */
+  box-shadow: 0 0 20px #00ccff;    /* Glowing effect */
+  cursor: pointer;
+}
+
+.home-container {
+  background-color: black;
+  color: #00ccff;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: sans-serif;
+
+  display: flex;                   /* Stack children vertically */
+  flex-direction: column;
+  align-items: center;             /* Horizontal center */
+  justify-content: center;         /* Vertical center */
+  text-align: center;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+/* ---------------------------
+   CLICKABLE COMPUTER IMAGE ZONE
+---------------------------- */
+.image-wrapper {
+  position: relative;
+  display: inline-block;           /* So click-zone can be absolutely positioned inside */
+}
+
+.click-zone {
+  position: absolute;
+  top: 55%;                        /* Adjust to match laptop screen */
+  left: 30%;
+  width: 20%;
+  height: 16%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* ---------------------------
+   BUILD PAGE: /build
+---------------------------- */
+.build-container {
+  background-color: black;
+  color: #00ccff;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'sans-serif';
+  text-align: center;
+}
+
+.build-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.build-subtitle {
+  margin-bottom: 2rem;
+}
+
+.build-section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+}
+
+.build-input {
+  background-color: #111;
+  color: #00ccff;
+  border: 1px solid #00ccff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+.build-button {
+  background-color: black;
+  color: #00ccff;
+  border: 2px solid #00ccff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.build-button:hover {
+  background-color: #00ccff;
+  color: black;
+}
+
+.build-disabled-button {
+  background-color: #222;
+  color: #666;
+  border: 2px solid #444;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: not-allowed;
+}
+
+.preview-box {
+  border: 2px dashed #00ccff;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: fit-content;
+}
+
+.build-generate {
+  background-color: #00ccff;
+  color: black;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.build-generate:hover {
+  background-color: #00b5e2;
+}
+
+.build-back {
+  display: block;
+  color: #00ccff;
+  text-decoration: underline;
+  margin-top: 1rem;
+} 
+/* =========================================================
+   SmokeyVerse Co-op – Website Builder Styling
+   (Dark neon, glass card, big-screen friendly)
+   ========================================================= */
+
+/* Global dark background + base text */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, #141b3a 0, #050712 45%, #020308 100%);
+  color: #e6f3ff;
+}
+
+/* Keep main content centered on large TVs + laptops */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* Page title area above the form */
+.builder-header,
+h1.builder-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h1.builder-title {
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #00aaff;
+  text-shadow: 0 0 12px rgba(0, 170, 255, 0.85);
+  margin-bottom: 0.25rem;
+}
+
+.builder-subtitle {
+  font-size: 0.95rem;
+  color: #a9c4ff;
+  opacity: 0.9;
+}
+
+/* Glassmorphism-style form card */
+.builder-card,
+form {
+  background: linear-gradient(
+    135deg,
+    rgba(4, 10, 30, 0.96),
+    rgba(3, 20, 46, 0.96)
+  );
+  border-radius: 18px;
+  border: 1px solid rgba(0, 170, 255, 0.45);
+  box-shadow:
+    0 0 40px rgba(0, 170, 255, 0.25),
+    0 0 120px rgba(0, 10, 40, 0.75);
+  padding: 2rem 2.25rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Section titles inside the form (Site Name, Contact Info, etc.) */
+.builder-section-title,
+h2.builder-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7fd2ff;
+  margin-bottom: 0.35rem;
+}
+
+/* Small helper text under section titles */
+.builder-helper {
+  font-size: 0.8rem;
+  color: #9fb4ff;
+  opacity: 0.9;
+}
+
+/* Generic field group wrapper */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Labels */
+.field-label,
+label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #b4c6ff;
+}
+
+/* Text inputs / selects / textareas */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 160, 255, 0.55);
+  background: rgba(0, 6, 20, 0.95);
+  color: #e6f3ff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease,
+              background-color 0.16s ease, transform 0.08s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #00c2ff;
+  box-shadow: 0 0 12px rgba(0, 180, 255, 0.8);
+  background: rgba(1, 14, 32, 0.98);
+  transform: translateY(-1px);
+}
+
+/* Layout selector row (Classic Business / What to Do / Where to Eat / Where to Stay) */
+.layout-options,
+.layout-buttons,
+.layout-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+/* Individual layout pill buttons */
+.layout-options button,
+.layout-buttons button,
+.layout-selector button {
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 170, 255, 0.65);
+  background: radial-gradient(circle at top,
+    rgba(0, 106, 255, 0.85),
+    rgba(0, 32, 80, 0.95)
+  );
+  color: #e9f7ff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.12s ease,
+              box-shadow 0.12s ease,
+              background 0.12s ease,
+              border-color 0.12s ease;
+}
+
+/* Simulated "active" state – you can tie this to a real class in TSX */
+.layout-options button.active,
+.layout-buttons button.active,
+.layout-selector button.active {
+  background: radial-gradient(circle at top,
+    rgba(0, 200, 255, 1),
+    rgba(0, 80, 140, 0.98)
+  );
+  box-shadow: 0 0 18px rgba(0, 210, 255, 0.95);
+  border-color: #33e5ff;
+}
+
+.layout-options button:hover,
+.layout-buttons button:hover,
+.layout-selector button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 16px rgba(0, 170, 255, 0.9);
+}
+
+/* Contact info rows (address / phone / email) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* “Hours” row with two half-widths on wide screens */
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+/* Main CTA button */
+button[type="submit"],
+.primary-cta {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background: radial-gradient(circle at top,
+    #00c2ff,
+    #0050ff
+  );
+  color: #f4fbff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    0 0 25px rgba(0, 190, 255, 0.9),
+    0 0 60px rgba(0, 20, 60, 0.9);
+  transition: transform 0.12s ease,
+              box-shadow 0.12s ease,
+              filter 0.12s ease;
+}
+
+button[type="submit"]:hover,
+.primary-cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 0 30px rgba(0, 220, 255, 1),
+    0 0 80px rgba(0, 16, 40, 1);
+}
+
+button[type="submit"]:active,
+.primary-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 0 16px rgba(0, 200, 255, 0.85);
+}
+
+/* Tiny footer text under the button */
+.builder-footer-text {
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  text-align: center;
+  color: #7c8dff;
+  opacity: 0.9;
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  main {
+    padding: 2rem 1.1rem 2.75rem;
+  }
+
+  .builder-card,
+  form {
+    padding: 1.6rem 1.4rem;
+  }
+
+  h1.builder-title {
+    font-size: 1.6rem;
+  }
+}
