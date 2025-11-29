@@ -1,0 +1,57 @@
+// -----------------------------------------------------
+// SMOKEYVERSE CO-OP — BACKEND DATA STRUCTURE
+// -----------------------------------------------------
+// This controls ALL database tables.
+// SQLite is used locally, Postgres later in production
+// with zero code changes to your builder.
+// -----------------------------------------------------
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// -----------------------------------------------------
+// USER MODEL (future login system)
+// -----------------------------------------------------
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+
+  sites     Site[]
+}
+
+// -----------------------------------------------------
+// SITE MODEL (every website someone builds)
+// -----------------------------------------------------
+model Site {
+  id          String   @id @default(cuid())
+  ownerId     String?
+  owner       User?    @relation(fields: [ownerId], references: [id])
+
+  title       String
+  siteType    String      // 'stay', 'eat', 'do'
+  jsonData    Json        // full site data from builder UI
+
+  status      String @default("pending") 
+  // values: 'pending', 'approved', 'rejected'
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// -----------------------------------------------------
+// PENDING REVIEW MODEL (admin approval system)
+// -----------------------------------------------------
+model PendingReview {
+  id        String   @id @default(cuid())
+  siteId    String   @unique
+  site      Site     @relation(fields: [siteId], references: [id])
+  createdAt DateTime @default(now())
+}
